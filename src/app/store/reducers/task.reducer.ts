@@ -1,6 +1,5 @@
 import {Task} from '../../models/task.model';
 import {TaskActionType, TaskAction} from '../actions/task.actions';
-import * as uuid from 'uuid';
 
 export interface TaskState {
   data: Task[]
@@ -15,11 +14,7 @@ export function taskReducer(state: TaskState = initialState, action: TaskAction)
     case TaskActionType.AddTask:
       return {
         ...state,
-        data: [...state.data, {
-          id: uuid.v4(),
-          title: action.payload.title,
-          isDone: false
-        }]
+        data: [...state.data, action.payload]
       }
     default: 
       return state;
