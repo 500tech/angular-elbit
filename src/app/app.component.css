@@ -1,0 +1,10 @@
+p {
+  font-family: Lato;
+}
+h1 {
+  transition: all 1s cubic-bezier(0.03, 1.29, 0.57,-0.33);
+}
+.is-small {
+  /* font-size: 16px; */
+  color: aqua;
+}

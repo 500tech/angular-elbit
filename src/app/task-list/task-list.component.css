@@ -1,0 +1,14 @@
+li {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+ul {
+  padding: 0;
+}
+
+.task-completed {
+  text-decoration: line-through;
+  opacity: 0.4;
+}

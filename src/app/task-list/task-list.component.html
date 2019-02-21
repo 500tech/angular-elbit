@@ -1,0 +1,23 @@
+<!-- debug JSON inside the view: -->
+<!-- <pre>{{ tasks$ | async | json }}</pre> -->
+
+<ul *ngIf="tasks$ | async">
+  <li *ngFor="let task of (tasks$ | async)" (click)="onToggleTask(task.id)">
+    <span [class.task-completed]="task.isDone">{{task.title}}</span>
+    <button (click)="onDeleteTask(task.id)">X</button>
+  </li>
+</ul>
+<h3 *ngIf="!(tasks$ | async)">
+  No tasks to do. Go rest
+</h3>
+
+<!-- Before NgRx: -->
+<!-- <ul *ngIf="tasks.length > 0">
+  <li *ngFor="let task of tasks" (click)="onToggleTask(task.id)">
+    <span [class.task-completed]="task.isDone">{{task.title}}</span>
+    <button (click)="onDeleteTask(task.id)">X</button>
+  </li>
+</ul>
+<h3 *ngIf="tasks.length === 0">
+  No tasks to do. Go rest
+</h3> -->

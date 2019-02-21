@@ -1,0 +1,6 @@
+<input [value]="name" (keydown.enter)="onAddTask()" (input)="onChangeName($event)"/>
+
+<button
+  [disabled]="!name"
+  [class.button-disabled]="!name"
+  (click)="onAddTask()">go</button>  
