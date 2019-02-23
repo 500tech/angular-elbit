@@ -1,9 +1,18 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Task } from './models/task.model';
 
-@Injectable({
-  providedIn: 'root'
-})
+// interface ServerData {
+//   id: string;
+//   title: string;
+// }
+
+@Injectable()
 export class ApiService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  fetchTasks() {
+    return this.http.get<Task[]>('https://jsonplaceholder.typicode.com/todos');
+  }
 }
