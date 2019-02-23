@@ -15,11 +15,9 @@ export class TaskListComponent implements OnInit, OnChanges {
   // @Input() tasks: Task[];
   // @Output() deleteTask = new EventEmitter<string>();
   // @Output() toggleTask = new EventEmitter<string>();
-  tasks$: Observable<Task[]>;
+  tasks$: Observable<Task[]> = this.store.pipe(select(selectTasks));  
+
   constructor(private store: Store<State>) {
-    this.tasks$ = store.pipe(
-      select(selectTasks),
-    )  
   }
 
   ngOnInit() {
