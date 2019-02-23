@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.selected {
+  border: 1px solid grey;
+  border-radius: 4px;
+}

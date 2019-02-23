@@ -1,0 +1,24 @@
+<form [formGroup]="loginForm" (submit)="onSubmit()">
+  <label>
+    Email: <input [class.error]="isInvalid('email')" type="email" name="email" formControlName="email" />
+    <span *ngIf="getError('email', 'required')">
+      Email is required.
+    </span>
+    <span *ngIf="getError('email', 'email')">
+      Email is invalid.
+    </span>
+  </label>
+  <br />
+  <label>
+    Password: <input [class.error]="isInvalid('password')" type="password" name="password" formControlName="password" />
+    <span *ngIf="getError('password', 'required')">
+      Password is required.
+    </span>
+    <span *ngIf="getError('password', 'minlength')">
+      Password is too short.
+    </span>
+
+  </label>
+  <br />
+  <button [disabled]="loginForm.invalid">Go</button>
+</form>

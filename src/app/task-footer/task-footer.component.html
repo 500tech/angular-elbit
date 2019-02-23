@@ -1,0 +1,9 @@
+<!-- <app-toggle [isActive]="(filter$ | async) === TaskFilter.ALL"> -->
+<span>{{tasksLeft$ | async | prettyCount:'task'}} left</span>
+<span>
+  <button *ngFor="let filter of [TaskFilter.ALL, TaskFilter.COMPLETED, TaskFilter.TODO]" [class.selected]="(filter$ | async) === filter"
+    (click)="setFilter(filter)">
+    {{TaskFilter[filter]}}
+  </button>
+</span>
+<button (click)="clear()">Clear Completed</button>

@@ -1,4 +1,3 @@
-
 <!-- {{ now | date:'long' | uppercase }} -->
 
 <!-- <h1>Cur Sec: {{curSec$ | async}}</h1> -->
@@ -6,6 +5,11 @@
 <!-- <h1 [class.is-small]="isBelow$ | async">
   {{ tasks.length | prettyCount:'task' }}
 </h1> -->
+<nav>
+  <a [routerLink]="['/']">Todos</a> |
+  <a [routerLink]="['/auth/login']">Login</a>
+</nav>
+
 <app-panel>
   <!-- // Before NgRx: -->
   <!-- <app-new-task (addTask)="onAddTask($event)"></app-new-task> -->
@@ -13,6 +17,5 @@
     [tasks]="tasks"
     (deleteTask)="onDeleteTask($event)"
     (toggleTask)="onToggleTask($event)"></app-task-list> -->
-  <app-new-task></app-new-task>
-  <app-task-list></app-task-list>
+  <router-outlet></router-outlet>
 </app-panel>
