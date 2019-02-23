@@ -1,6 +1,13 @@
-### Course steps
+## Course Material
+StackBlitz:
+https://stackblitz.com/edit/angular-elbit?file=readme.md
+
+Git Repo:
+https://github.com/500tech/angular-elbit
+
+### Steps:
 Start Point:
-https://stackblitz.com/edit/angular-intel-6vmzho?file=src%2Ftypescript.ts
+https://stackblitz.com/edit/angular-elbit-start?file=src/app/app.component.ts
 
 Typescript Done:
 https://stackblitz.com/edit/angular-elbit-typescript?file=src/typescript.ts
@@ -29,7 +36,7 @@ https://stackblitz.com/edit/angular-elbit-di?file=readme.md
 NgRx:
 https://slides.com/hackademy/ngrx?token=tDRFaRsh
 
-### Links
+## Links
 TodoMVC Vanilla JS + HTML + CSS:
 http://todomvc.com/examples/vanillajs/#/
 
@@ -52,7 +59,7 @@ https://ngrx.io/guide/schematics
 Redux Devtools:
 https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
 
-### Angular CLI
+## Angular CLI
 Develop:
 npm i -g @angular/cli  # run once
 ng new myProject       # create new project
@@ -76,7 +83,7 @@ TSConfig - noImplicitAny
 TSLint
 Prettier
 
-### Extra Reading Material
+## Extra Reading Material
 Zone
 ChangeDetection
 Angular - angular.io
@@ -86,27 +93,19 @@ events - https://www.w3schools.com/tags/ref_eventattributes.asp
 FlexBox - https://flexboxfroggy.com/
 RX - http://reactivex.io
 ngrx - https://angular.io/guide/rx-library
+==  - https://www.ecma-international.org/ecma-262/5.1/#sec-11.9.3
+=== - https://www.ecma-international.org/ecma-262/5.1/#sec-11.9.6
+reduce - https://www.w3schools.com/jsref/jsref_reduce.asp
 
-### Augury
+## Augury Tips
 Select element in Augury
 Type $$el.componentInstance in console
 
-### Follow up
+## Follow up
 == vs. ===
 reduce
 enum
 nx / monorepo
 localStorage
+Redux DevTools, jump doesn't trigger CD
 TypeScript - TaskAction not recognized
-Redux DevTools - jump doesn't trigger CD
-
-### Homework
-Complete Input & Output
-Add new task object to the array
-Create user on github.com
-Create stackblitz account using github
-Save the link that you sent yourself under your user
-
-### Next Class
-Install Augury
-Log in to stackblitz using github
