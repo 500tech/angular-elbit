@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { State } from '../store';
 import { Task } from '../models/task.model';
-import { selectFilteredTasks } from '../store/selectors/task.selectors';
+import { selectFilteredTasks, selectTasksTotal, selectFilteredTasksTotal } from '../store/selectors/task.selectors';
 import { RemoveTaskAction, MarkAsIncompleteTaskAction, CompleteTaskAction } from '../store/actions/task.actions';
 
 @Component({
@@ -17,6 +17,7 @@ export class TaskListComponent implements OnInit, OnChanges {
   // @Output() deleteTask = new EventEmitter<string>();
   // @Output() toggleTask = new EventEmitter<string>();
   tasks$: Observable<Task[]> = this.store.pipe(select(selectFilteredTasks));
+  tasksTotal$: Observable<number> = this.store.pipe(select(selectFilteredTasksTotal));
 
   constructor(private store: Store<State>) {
   }
