@@ -83,6 +83,11 @@ TSConfig - noImplicitAny
 TSLint
 Prettier
 
+## VSCode
+Install extensions:
+Angular Essentials
+Angular Schematics
+
 ## Extra Reading Material
 Zone
 ChangeDetection
