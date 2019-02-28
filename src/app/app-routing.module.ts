@@ -5,10 +5,11 @@ import { TodosComponent } from './todos/todos.component';
 
 const routes: Routes = [
   { path: '', component: TodosComponent },
-  {
-    path: 'auth',
-    loadChildren: './auth/auth.module#AuthModule',
-  },
+  // For lazy loading:
+  // {
+  //   path: 'auth',
+  //   loadChildren: './auth/auth.module#AuthModule',
+  // },
 ]
 
 @NgModule({

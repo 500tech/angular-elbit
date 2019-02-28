@@ -12,7 +12,7 @@ import { ApiService } from './api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { TodosComponent } from './todos/todos.component';
-// import { AuthModule } from './auth/auth.module';
+import { AuthModule } from './auth/auth.module'; // Remove for lazy loading
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { TaskEffects } from './store/effects/task.effects';
@@ -33,7 +33,7 @@ import { TaskFooterComponent } from './task-footer/task-footer.component';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     SharedModule,
     AppRoutingModule,
-    // AuthModule,
+    AuthModule, // Remove for lazy loading
     EffectsModule.forRoot([AppEffects, TaskEffects])
   ],
   providers: [ApiService],
