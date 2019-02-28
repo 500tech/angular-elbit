@@ -36,6 +36,9 @@ Provider + DI:
 https://stackblitz.com/edit/angular-elbit-di?file=readme.md
 
 NgRx:
+https://stackblitz.com/github/500tech/angular-elbit/tree/ngrx
+
+NgRx Slides:
 https://slides.com/hackademy/ngrx?token=tDRFaRsh
 
 NgRx Entity:
