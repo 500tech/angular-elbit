@@ -1,40 +1,35 @@
-import { State } from '..';
-import { Task } from '../../models/task.model';
-import { selectAll, selectTotal, TaskState, TaskFilter } from '../reducers/task.reducer';
-import { createSelector } from '@ngrx/store';
+import { State } from "..";
+import { Task } from "../../models/task.model";
+import { selectAll, selectTotal, TaskFilter } from "../reducers/task.reducer";
 
-export const selectTaskState = (state: State): TaskState => state.task;
+export const selectTasks = (state: State): Task[] => {
+  return selectAll(state.task);
+};
+
+export const selectTasksCount = (state: State): number => {
+  return selectTotal(state.task);
+};
+
+export const selectTasksLeft = (state: State): number => {
+  return selectAll(state.task).filter(task => !task.isDone).length;
+};
+
 export const selectTaskFilter = (state: State): TaskFilter => state.task.filter;
 
-export const selectTasks = createSelector<State, TaskState, Task[]>(
-  selectTaskState,
-  (taskState: TaskState): Task[] => selectAll(taskState)
-);
+export const selectFilteredTasks = (state: State): Task[] => {
+  const filter = selectTaskFilter(state);
+  const allTasks = selectTasks(state);
 
-export const selectFilteredTasks = createSelector<State, Task[], TaskFilter, Task[]>(
-  selectTasks,
-  selectTaskFilter,
-  (allTasks: Task[], filter: TaskFilter) => allTasks.filter(task => {
+  return allTasks.filter(task => {
     switch (filter) {
       case TaskFilter.ALL:
         return true;
+      case TaskFilter.ACTIVE:
+        return !task.isDone;
       case TaskFilter.COMPLETED:
         return task.isDone;
-      case TaskFilter.TODO:
-        return !task.isDone;
       default:
-        return false;
+        throw new Error(`Filter not supported ${filter}`);
     }
-  })
-);
-
-export const selectTasksTodoCount = createSelector<State, Task[], number>(
-  selectTasks,
-  (allTasks: Task[]) => allTasks.filter(task => !task.isDone).length
-);
-
-export const selectTasksTotal = (state: State): number => selectTotal(state.task);
-export const selectFilteredTasksTotal = createSelector<State, Task[], number>(
-  selectFilteredTasks,
-  tasks => tasks.length
-);
+  });
+};
