@@ -1,7 +1,6 @@
 import { State } from "..";
 import { Task } from "../../models/task.model";
-import { selectAll } from "../reducers/task.reducer";
-import { selectTotal } from "src/app/task.reducer";
+import { selectAll, selectTotal } from "../reducers/task.reducer";
 
 export const selectTasks = (state: State): Task[] => {
   return selectAll(state.task);
