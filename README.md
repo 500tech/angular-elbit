@@ -1,7 +1,7 @@
 ## Course Material
 
 StackBlitz:
-https://stackblitz.com/edit/angular-elbit?file=readme.md
+https://stackblitz.com/github/500tech/angular-elbit
 
 Git Repo:
 https://github.com/500tech/angular-elbit
@@ -37,6 +37,18 @@ https://stackblitz.com/edit/angular-elbit-di?file=readme.md
 
 NgRx:
 https://slides.com/hackademy/ngrx?token=tDRFaRsh
+
+NgRx Entity:
+https://stackblitz.com/github/500tech/angular-elbit/tree/ngrx-entity
+
+NgRx - added remove action, and tasksTotal selector:
+https://stackblitz.com/github/500tech/angular-elbit/tree/ngrx-remove-and-selector
+
+Added Footer:
+https://stackblitz.com/github/500tech/angular-elbit/tree/added-footer
+
+Effects, Router, Forms (Final):
+https://stackblitz.com/github/500tech/angular-elbit/tree/effects-router-forms
 
 ## Links
 
