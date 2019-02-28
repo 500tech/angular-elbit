@@ -62,6 +62,9 @@ https://ngrx.io/guide/schematics
 Redux Devtools:
 https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
 
+AngularUP Conference:
+https://angular-up.com/
+
 ## Angular CLI
 
 Develop:
@@ -107,7 +110,8 @@ ngrx - https://angular.io/guide/rx-library
 === - https://www.ecma-international.org/ecma-262/5.1/#sec-11.9.6
 reduce - https://www.w3schools.com/jsref/jsref_reduce.asp
 
-Some cool Angular Talks:
+### Some cool Angular Talks:
+
 Rob Wormald, what's new and coming in Angular:
 https://www.youtube.com/watch?v=-dMegTbYHxA
 
@@ -120,6 +124,11 @@ https://www.youtube.com/watch?v=E707WJakn7A
 Uri Shaked, connecting to internet of things with Angular:
 https://www.youtube.com/watch?v=J2lP54FbCaM&t=16s
 
+And many more:
+https://www.youtube.com/channel/UCBmp3Hpuq1RAsgiyJ6vr-FA
+https://www.youtube.com/user/ngconfvideos
+https://www.youtube.com/channel/UCzrskTiT_ObAk3xBkVxMz5g
+
 ## Augury Tips
 
 Select element in Augury
@@ -129,8 +138,4 @@ Type \$\$el.componentInstance in console
 
 == vs. ===
 reduce
-enum
 nx / monorepo
-localStorage
-Redux DevTools, jump doesn't trigger CD
-TypeScript - TaskAction not recognized
