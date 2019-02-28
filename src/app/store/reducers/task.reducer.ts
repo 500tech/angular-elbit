@@ -1,13 +1,12 @@
 import { Task } from "../../models/task.model";
 import { TaskActionType, TaskAction } from "../actions/task.actions";
+import { EntityAdapter, createEntityAdapter, EntityState } from "@ngrx/entity";
 
-export interface TaskState {
-  data: Task[];
-}
+export const adapter: EntityAdapter<Task> = createEntityAdapter<Task>();
 
-export const initialState: TaskState = {
-  data: []
-};
+export interface TaskState extends EntityState<Task> {}
+
+export const initialState: TaskState = adapter.getInitialState({});
 
 export function taskReducer(
   state: TaskState = initialState,
@@ -15,19 +14,18 @@ export function taskReducer(
 ): TaskState {
   switch (action.type) {
     case TaskActionType.AddTask:
-      return {
-        ...state,
-        data: [...state.data, action.payload]
-      };
+      return adapter.addOne(action.payload, state);
     case TaskActionType.RemoveTask:
-      const newData = state.data.filter(
-        task => task.id !== action.payload.taskId
-      );
-      return {
-        ...state,
-        data: newData
-      };
+      return adapter.removeOne(action.payload.taskId, state);
+
     default:
       return state;
   }
 }
+
+export const {
+  selectIds,
+  selectEntities,
+  selectAll,
+  selectTotal
+} = adapter.getSelectors();
