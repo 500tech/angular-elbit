@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+li {
+  list-style: none;
+  margin: 0 5px;
+  cursor: pointer;
+  padding: 4px;
+  box-sizing: border-box;
+}
+.selected {
+  border: 1px solid grey;
+  border-radius: 4px;
+}

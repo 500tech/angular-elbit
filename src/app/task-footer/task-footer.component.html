@@ -1,0 +1,13 @@
+<div class="footer">
+  <span>{{ tasksLeft$ | async }} left</span>
+  <ul>
+    <li
+      *ngFor="let filter of filterTypes"
+      (click)="onSetFilter(filter)"
+      [class.selected]="(taskFilter$ | async) === filter"
+    >
+      {{ filter }}
+    </li>
+  </ul>
+  <button>Clear</button>
+</div>

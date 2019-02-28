@@ -2,7 +2,7 @@
 <!-- <pre>{{ store$ | async | json }}</pre> -->
 <h3>{{ tasksCount$ | async | prettyCount: "task" }}</h3>
 <ul *ngIf="(tasks$ | async)">
-  <li *ngFor="let task of (tasks$ | async)" (click)="onToggleTask(task.id)">
+  <li *ngFor="let task of (tasks$ | async)" (click)="onToggleTask(task)">
     <span [class.task-completed]="task.isDone">{{ task.title }}</span>
     <button (click)="onDeleteTask(task.id)">X</button>
   </li>

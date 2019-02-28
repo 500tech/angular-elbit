@@ -13,9 +13,14 @@ import { State } from "../store";
 import { Task } from "../models/task.model";
 import {
   selectTasks,
-  selectTasksCount
+  selectTasksCount,
+  selectFilteredTasks
 } from "../store/selectors/task.selectors";
-import { RemoveTaskAction } from "../store/actions/task.actions";
+import {
+  RemoveTaskAction,
+  MarkTaskAsIncompleteAction,
+  CompleteTaskAction
+} from "../store/actions/task.actions";
 
 @Component({
   selector: "app-task-list",
@@ -27,7 +32,7 @@ export class TaskListComponent implements OnInit, OnChanges {
   // @Input() tasks: Task[];
   // @Output() deleteTask = new EventEmitter<string>();
   // @Output() toggleTask = new EventEmitter<string>();
-  tasks$: Observable<Task[]> = this.store.pipe(select(selectTasks));
+  tasks$: Observable<Task[]> = this.store.pipe(select(selectFilteredTasks));
   tasksCount$: Observable<number> = this.store.pipe(select(selectTasksCount));
   constructor(private store: Store<State>) {}
 
@@ -44,7 +49,12 @@ export class TaskListComponent implements OnInit, OnChanges {
     // this.deleteTask.emit(taskId);
   }
 
-  onToggleTask(taskId: string) {
+  onToggleTask(task: Task) {
+    const action = task.isDone
+      ? MarkTaskAsIncompleteAction
+      : CompleteTaskAction;
+
+    this.store.dispatch(new action({ taskId: task.id }));
     // Before NgRx:
     // this.toggleTask.emit(taskId);
   }
