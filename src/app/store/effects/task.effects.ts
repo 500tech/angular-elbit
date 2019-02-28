@@ -2,8 +2,8 @@ import { Injectable } from "@angular/core";
 import { Actions, Effect, ofType } from "@ngrx/effects";
 import { TaskActionType, SetTasksAction } from "../actions/task.actions";
 import { switchMap, map, tap } from "rxjs/operators";
-import { ApiService } from "src/app/api.service";
-import { Task } from "src/app/models/task.model";
+import { ApiService } from "../../api.service";
+import { Task } from "../../models/task.model";
 
 const transformTask = task => ({
   title: task.title,
